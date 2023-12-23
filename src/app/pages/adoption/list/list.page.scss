@@ -1,0 +1,245 @@
+ion-content {
+    // --ion-background-color: linear-gradient(315deg, #f1deff, #fdf6ff);
+    --ion-background-color: #f1deff;
+
+}
+
+#adoption_slider {
+    ion-slide {
+        max-width: 6rem;
+        margin: 10px;
+
+        .part-icon {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 3px;
+            margin: auto;
+
+            ion-img::part(image) {
+                height: 3.7rem;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+        }
+
+        p {
+            text-align: center;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+    }
+}
+
+#rescuer_slider {
+    ion-slide {
+        max-width: 15%;
+        margin: 10px;
+
+        .part-icon {
+            min-width: 67px;
+            height: 29px;
+            border-radius: 16px;
+            border-color: #ffffff;
+            border-style: solid;
+            border-width: thin;
+            padding: 3px;
+            background-color: #b198ea;
+
+            p {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 12px;
+
+                .dot {
+                    height: 5px;
+                    width: 5px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: auto;
+                }
+
+                .text_badge {
+                    margin: 5px 5px;
+                }
+
+            }
+
+        }
+
+
+    }
+}
+
+#adopt-heading {
+    margin: auto;
+    p {
+        margin: 1% auto;
+        width: 200%;
+    }
+}
+
+#list-container {
+    ion-col {
+        padding: 0 !important;
+    }
+
+    #list-filter-box {
+        margin-top: 20%;
+        --ion-background-color: #ffffff;
+
+        ion-list-header {
+            font-size: 130%;
+            border-bottom: 1px solid lightgrey;
+
+            ion-label {
+                margin: auto 5%;
+            }
+        }
+
+        ion-item {
+            margin: 5% auto 5% 15%;
+            // --background: #becbe7;
+            // border: 1px solid #000000;
+            border-radius: 2rem;
+            height: 2.3rem;
+            width: 50%;
+
+            ion-label {
+                height: 60%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#adoption_list_card {
+    min-width: 100%;
+    min-height: 40%;
+    border-radius: 50px;
+    margin-bottom: -45px;
+    padding-bottom: 45px;
+    padding-top: 20px;
+
+    ion-card {
+        border-radius: 16px;
+        box-shadow: 20px 20px 60px #d9d9d9,
+            -20px -20px 60px #ffffff
+    }
+
+}
+
+#adopt-heading {
+    font-size: 195%;
+    font-weight: 500;
+}
+
+.custom-sort-btn {
+    font-size: 75%;
+    border: 1px solid #7b55d3;
+    border-radius: 25px;
+    height: 65%;
+}
+
+
+.custom-card-header {
+    padding: 0 7%;
+
+    p {
+        margin: 0;
+    }
+}
+
+
+
+.main {
+    position: absolute;
+    background-color: #ffffff;
+    color: #484848;
+    border-top-left-radius: 50px 60px;
+    border-top-right-radius: 50px 60px;
+    // min-height: 45vh;
+
+    padding-bottom: 45px;
+    padding-top: 20px;
+    width: 100%;
+
+    height: fit-content;
+    min-height: 100%;
+}
+
+#temp {
+    padding-top: 15.5vh;
+    position: absolute;
+    width: 100%;
+
+    .background_temp {
+        background-color: #f1f1f1;
+        opacity: 0.8;
+        border-radius: 16px;
+        border-color: coral;
+        color: #212529;
+
+        .weather_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            ion-img {
+                width: 50px;
+                height: 50px;
+            }
+
+        }
+
+        .non_opacity_text {
+            opacity: 1 !important;
+        }
+
+        #main_temp {
+            font-size: 25px;
+            margin: 0 !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yellow_text {
+            color: #f3ad55;
+        }
+    }
+
+}
+
+.justify_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animal_img_container {
+    --background: #ffffff;
+
+    .animal_img {
+
+        height: 17vh;
+        object-fit: cover;
+        width: 100%;
+        // height: 100%;
+    }
+
+}
+
+.no_data_found {
+    height: 120px;
+    width: 500px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}

@@ -1,0 +1,171 @@
+ion-header {
+  display: flex;
+  padding-left: 5%;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background: #00000000;
+
+  #header-title {
+    display: none;
+    font-size: 175%;
+    margin: auto;
+    padding-left: 5%;
+  }
+  ion-text {
+    margin-inline: 3%;
+  }
+}
+
+ion-content {
+  // --ion-background-color: linear-gradient(315deg, #f1deff, #fdf6ff);
+  --ion-background-color: #ffffff;
+
+}
+
+
+
+
+
+#funding-box-container-row {
+  ion-card {
+    --background: #bfffca;
+    display: flex;
+    align-items: center;
+    // padding: 3%;
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 75%);
+    border-radius: 15px;
+    margin: 2%;
+    color: black;
+
+    img {
+      width: 4rem;
+      margin: 3%;
+    }
+
+    ion-card-content {
+      font-size: x-large;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+#listings-contaner-row {
+  padding: 0 3%;
+}
+
+.card{
+  text-align:center;
+  margin: 0 auto;
+  color:#454138;
+  // background: #454138;
+  // background: linear-gradient(145deg, #d7c8c4, #ffeee9);
+  // box-shadow:  20px 20px 60px #cbbdb9,
+  //              0px 0px 60px #fffffb;
+  background: #fff0;
+  border:16px;
+}
+
+
+.row_for_image_and_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 60%;
+    
+  }
+  ion-button{
+    --border-color:#454138;
+    color: #454138;
+    font-size: medium;
+
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  
+
+}
+
+
+#box_1 {
+  background: #caf6ff;
+}
+
+#box_2 {
+  background: #d4ffe4;
+}
+
+#box_3 {
+  background: #ffd8e9;
+}
+
+#box_4 {
+  background: #e7ffbe;
+}
+
+
+
+#adoption-form-container-row {
+  ion-card {
+    --background: #ffffff;
+    display: flex;
+    align-items: center;
+    // padding: 3%;
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 75%);
+    border: 0.5px solid black;
+    border-radius: 15px;
+    margin: 2%;
+
+    img {
+      width: 4rem;
+      margin: 3%;
+    }
+
+    ion-card-content {
+      font-size: x-large;
+    }
+  }
+}
+
+
+#new-rescue-request-container-row {
+  ion-card {
+    --background: #ffffff;
+    display: flex;
+    align-items: center;
+    // padding: 3%;
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 75%);
+    border: 0.5px solid black;
+    border-radius: 15px;
+    margin: 2%;
+
+    img {
+      width: 4rem;
+      margin: 3%;
+    }
+
+    ion-card-content {
+      font-size: x-large;
+    }
+  }
+}
+
+
+
+
+// @media (max-width:413px) and (min-width:321px)  {
+@media (min-width:1100px)  {
+  ion-header {
+    justify-content: flex-end;
+
+    #header-title {
+      display: block;
+    }
+  }
+}

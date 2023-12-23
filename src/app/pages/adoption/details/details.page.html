@@ -1,0 +1,181 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home">
+        <ion-icon name="arrow-back-circle-outline" size="large">
+        </ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="concert_text">StrayDopt</ion-title>
+  </ion-toolbar>
+  <!-- <ion-progress-bar type="indeterminate" *ngIf="commonservice.bar_loader"></ion-progress-bar> -->
+  <ion-progress-bar type="indeterminate" ></ion-progress-bar>
+</ion-header>
+
+<ion-content>
+
+
+  <div id="main_animal_image">
+    <ion-slides pager="true" [options]="slideOpts">
+      <!-- <ion-slide *ngFor="let image of animal_doption_details_images; let i = index; let lst = last;let c= count" id="image-slide">
+        <img src="{{image.url}}" (error)="commonservice.image_load_error($event, 'animal')">
+      </ion-slide> -->
+      <ion-slide id="image-slide">
+        <img src="../../../../assets/profile/rescuer.svg" >
+      </ion-slide>
+      <ion-slide id="image-slide">
+        <img src="../../../../assets/profile/rescuer.svg" >
+      </ion-slide>
+      <ion-slide id="image-slide">
+        <img src="../../../../assets/profile/rescuer.svg" >
+      </ion-slide>
+      
+    </ion-slides>
+    <!-- <ion-progress-bar type="indeterminate" *ngIf="commonservice.bar_loader"></ion-progress-bar> -->
+  </div>
+
+
+  <div id="animal_details_content">
+
+    <ion-row>
+      <ion-col  size="10" id="animal_details_column">
+        <ion-row>
+
+          <ion-col size="12">
+            <!-- <strong style="font-size: 30px; color: #603490;">{{animal_doption_details.name}}</strong> -->
+            <strong style="font-size: 30px; color: #603490;">name</strong>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <!-- {{animal_doption_details.breed}} -->
+            breed
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" id="fav_icon" >
+      <!-- <ion-col size="2" id="fav_icon"  (click)='favorite()'> -->
+        <!-- <ion-icon *ngIf="icon_name == 0 && animal_doption_details.user_id != user_id" name="heart-outline" class="form-input-icon" color="secondary"></ion-icon> -->
+        <!-- <ion-icon *ngIf="icon_name == 1 && animal_doption_details.user_id != user_id" name="heart-circle" class="form-input-icon" color="secondary"></ion-icon> -->
+        <ion-icon name="heart-circle" class="form-input-icon" color="secondary"></ion-icon>
+      </ion-col>
+
+      <!-- <ion-col size="12" *ngIf="animal_doption_details.user_id == user_id && animal_doption_details.adopted_by_user_id === '0'">
+        <ion-button (click)="edit_details()" expand="block" fill="clear" shape="round">
+          Edit
+        </ion-button>
+      </ion-col> -->
+      <ion-col size="12" >
+        <ion-button expand="block" fill="clear" shape="round">
+          Edit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row id='animal_atrributes'>
+      <ion-slides  [options]="slideOpts">
+        <ion-slide >
+          <ion-card class="animal_attribute_card ion-margin-start">
+            <ion-card-header>
+              <ion-card-subtitle color="primary">Age</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- {{animal_doption_details.age}} -->
+              age
+            </ion-card-content>
+          
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide >
+          <ion-card class="animal_attribute_card ion-margin-start">
+            <ion-card-header>
+              <ion-card-subtitle color="primary">Category</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- {{animal_doption_details.category_name}} -->
+              category
+            </ion-card-content>
+          
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide >
+          <ion-card class="animal_attribute_card ion-margin-start">
+            <ion-card-header>
+              <ion-card-subtitle color="primary">Color</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- {{animal_doption_details.color}} -->
+              color
+            </ion-card-content>
+          
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+
+    <div class="ion-padding" id='animal_details_by_user'>
+      <!-- {{animal_doption_details.description}} -->
+      description testttttttt tttttttttttttttt tttttttttttttttttttttttttttt
+    </div>
+
+    <ion-row>
+      <ion-col>
+        <div id="owner_name" >
+          <!-- <ion-row routerLink="/rescuers-landing/rescuersdetails/{{animal_doption_details.user_id}}">
+            <ion-col size="6">
+              <ion-row class="justify_content ion-margin-top"><p color="secondary" >Owner: {{animal_doption_details.owner}}</p></ion-row>
+              <ion-row class="justify_content"><p>Distance: <strong>{{owner_distance}}km</strong></p></ion-row>
+            </ion-col>
+            <ion-col size="6">
+              <ion-avatar class="justify_content">
+                <img src="{{animal_doption_details.owner_photo}}" (error)="commonservice.image_load_error($event, 'human')">
+              </ion-avatar>
+            </ion-col>
+          </ion-row> -->
+          <ion-row >
+            <ion-col size="6">
+              <ion-row class="justify_content ion-margin-top"><p color="secondary" >Owner: owner</p></ion-row>
+              <!-- <ion-row class="justify_content"><p>Distance: <strong>{{owner_distance}}km</strong></p></ion-row> -->
+              <ion-row class="justify_content"><p>Distance: <strong>99km</strong></p></ion-row>
+            </ion-col>
+            <ion-col size="6">
+              <ion-avatar class="justify_content">
+                <!-- <img src="{{animal_doption_details.owner_photo}}" (error)="commonservice.image_load_error($event, 'human')"> -->
+                <img src="../../../../assets/profile/normal_user.svg">
+              </ion-avatar>
+            </ion-col>
+          </ion-row>
+          
+        </div>
+      </ion-col>
+      
+    </ion-row>
+
+    
+  </div>
+
+
+  <ion-footer>
+
+    <ion-toolbar style="    margin-top: 23%;">
+      <ion-row>
+        <ion-col size="4" class="justify_content">
+          <!-- Feature hidden for now -->
+          <!-- <ion-button routerLink="/rescuers-landing" color="light" fill="solid" shape="round"><ion-icon name="share"></ion-icon></ion-button> -->
+        </ion-col>
+        <ion-col size="8" class="justify_content">
+          <!-- <ion-button *ngIf="animal_doption_details.user_id != user_id" (click)="open_contact_actionsheet(animal_doption_details.user_id, animal_doption_details.owner_phonenumber)" color="primary" fill="solid" shape="round" style="width: 100%;"><ion-icon name="ribbon"></ion-icon> Chat with owner</ion-button> -->
+          <ion-button color="primary" fill="solid" shape="round" style="width: 100%;"><ion-icon name="ribbon"></ion-icon> Chat with owner</ion-button>
+        </ion-col>
+      </ion-row>
+      
+    </ion-toolbar>
+  </ion-footer>
+
+
+</ion-content>
+
+
+

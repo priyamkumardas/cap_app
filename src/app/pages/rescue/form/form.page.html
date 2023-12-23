@@ -1,0 +1,160 @@
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title  color="dark" class="form_title">StrayDopt</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+<ion-content color="primary">
+  <!-- <ion-progress-bar type="indeterminate" *ngIf="commonservice.bar_loader"></ion-progress-bar> -->
+  <ion-grid id='form_content'>
+
+
+    
+    <ion-list>
+      
+
+      <!-- <form  [formGroup]="form"  (ngSubmit)="submitHandler()"> -->
+      <form  >
+
+          <ion-row id="image-section-container-main-row">
+            <ion-col sizeXs="7" sizeSm="7" sizeMd="7" sizeLg="5" sizeXl="5" id="img_col_main">
+              <!-- <ion-card (click)="select_upload_process(1)" class="img_card_main" > -->
+                  <!-- <ion-thumbnail *ngIf="uploadImg.rescue_photo_preview1">
+                    <img src="{{uploadImg.rescue_photo_previewurl1}}" style="width:100%;" (error)="image_load_error($event)">
+                  </ion-thumbnail> -->
+                  <!-- <ion-thumbnail *ngIf="!uploadImg.rescue_photo_preview1"> -->
+                  <ion-thumbnail>
+                    <ion-img src="../../../../assets/icon/add-photo.svg"></ion-img>
+                  </ion-thumbnail>
+            </ion-col>
+
+            <ion-col sizeXs="5" sizeSm="5" sizeMd="5" sizeLg="7" sizeXl="7" id="img-col-secondary">
+              <ion-row>
+            
+            <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6"  id="img_col_secondary_1">
+              <!-- <ion-card (click)="select_upload_process(2)" class="img_card_secondary" > -->
+
+                  <!-- <ion-thumbnail *ngIf="uploadImg.rescue_photo_preview2">
+                    <ion-img src="{{uploadImg.rescue_photo_previewurl2}}" (error)="image_load_error($event)"></ion-img>
+                  </ion-thumbnail> -->
+                  <!-- <ion-thumbnail *ngIf="!uploadImg.rescue_photo_preview2"> -->
+                  <ion-thumbnail>
+                    <ion-img src="../../../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail>
+
+            </ion-col>
+            <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6"  id="img_col_secondary_2">
+              <!-- <ion-card (click)="select_upload_process(3)" class="img_card_secondary" > -->
+
+                  <!-- <ion-thumbnail *ngIf="uploadImg.rescue_photo_preview3">
+                    <ion-img src="{{uploadImg.rescue_photo_previewurl3}}" (error)="image_load_error($event)"></ion-img>
+                  </ion-thumbnail> -->
+                  <!-- <ion-thumbnail *ngIf="!uploadImg.rescue_photo_preview3"> -->
+                  <ion-thumbnail >
+                    <ion-img src="../../../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail>
+
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+          </ion-row>
+            
+
+<ion-row>
+  <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6">
+    <ion-item class="form-item">
+      <ion-label>Category</ion-label>
+      <!-- <ion-select placeholder="Select One" formControlName="category" value="{{rescue_animal_details.category}}" >
+        <ion-select-option *ngFor="let animal_category of animal_master_category; let i = index; let lst = last;" value="{{animal_category.id}}">{{animal_category.name}}</ion-select-option>
+      </ion-select> -->
+        <ion-select value="peperoni"  placeholder="Select Pizza">
+          <ion-select-option value="peperoni">Peperoni</ion-select-option>
+          <ion-select-option value="hawaii">Hawaii</ion-select-option>
+          <ion-select-option value="hawaii">Hawaii</ion-select-option>
+        </ion-select>
+    </ion-item>
+  </ion-col>
+  <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6">
+    <ion-item id="refer-rescuer-form-item">
+      <ion-label for="exampleInputEmail2">Refer a Rescuer</ion-label>
+      <!-- <ion-input type="text" id="exampleInputEmail2" placeholder="Directly refer a rescuer" [(ngModel)]="seleted_refered_rescuer_value.username" formControlName="refered_rescuers" (ionChange)="search_rescuers($event.target.value)" ></ion-input> -->
+      <ion-input type="text" id="exampleInputEmail2" placeholder="Directly refer a rescuer" ></ion-input>
+      <!-- <ion-button *ngIf="showReferCancelButton" (click)="cancel_refer_rescuer()"> -->
+      <ion-button >
+        <ion-icon slot="icon-only"   name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <!-- <span *ngIf="!seleted_refered_rescuer_flag"> -->
+    <span >
+      <!-- <ion-chip  *ngFor="let rescuer of rescuer_list; let i = index" (click)="seleted_refered_rescuer(i)"> -->
+      <ion-chip >
+        <ion-avatar>
+          <!-- <img src="{{rescuer.photo}}" (error)="image_load_error($event)"> -->
+          <img src="../../../../assets/icon/add_img.svg" >
+        </ion-avatar>
+        <!-- <ion-label>{{rescuer.displayName}} {{rescuer.distance}}Km</ion-label> -->
+        <ion-label>displayName 99Km</ion-label>
+      </ion-chip>
+
+      <ion-chip >
+        <ion-avatar>
+          <img src="../../../../assets/icon/fund-us.svg" >
+        </ion-avatar>
+        <ion-label>anotherName 12Km</ion-label>
+      </ion-chip>
+    </span>
+      
+      <!-- <ion-chip *ngIf="seleted_refered_rescuer_flag" (click)="cancel_seleted_refered_rescuer()">
+        <ion-avatar>
+          <img src="{{seleted_refered_rescuer_value.photo}}" (error)="image_load_error($event)">
+        </ion-avatar>
+        <ion-label>{{seleted_refered_rescuer_value.displayName}}</ion-label>
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-chip> -->
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6">
+                        
+    <ion-item class="form-item" lines="none">
+      <ion-label>Needs Immediate Attention</ion-label>
+      <!-- <ion-toggle color="primary" formControlName="urgent" value="{{rescue_animal_details.urgent}}"></ion-toggle> -->
+      <ion-toggle color="primary"  value="false"></ion-toggle>
+    </ion-item>
+  </ion-col>
+  <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6">
+
+          
+            <!-- <ion-item class="form-item" *ngIf="rescue_request_id == '0'"> -->
+              <ion-item class="form-item" lines="none">
+                <ion-checkbox color="secondary"  value="true"></ion-checkbox>
+                <ion-label> Accept
+                <!-- <strong  (click)="open_link('https://www.straydopt.com/privacypolicy')"> -->
+                  <strong>
+                    guidelines
+                  </strong>
+                </ion-label>
+          </ion-item>        
+      
+  </ion-col>
+</ion-row>
+
+          
+
+
+
+              
+        
+        <!-- <ion-button type="submit" expand="block"   [disabled]="form.invalid">Submit</ion-button> -->
+        <ion-button id="submit-button" type="submit" expand="block">Submit</ion-button>
+                    
+                
+      </form>
+
+      
+    </ion-list>
+        
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">StrayDopt</string>
+    <string name="title_activity_main">StrayDopt</string>
+    <string name="package_name">com.papapanda.straydopt</string>
+    <string name="custom_url_scheme">com.papapanda.straydopt</string>
+</resources>

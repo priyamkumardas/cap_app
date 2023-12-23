@@ -1,0 +1,314 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <!-- <ion-buttons slot="start" *ngIf="selected_filter_animal_category_boolean">
+      <ion-button class="clear_search" (click)="clear_animal_category_filter()" ><ion-icon name="backspace-outline"></ion-icon></ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"><ion-icon name="arrow-back-circle-outline" size="large"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!selected_filter_animal_category_boolean" class="concert_text">StrayDopt</ion-title>
+    <ion-title *ngIf="selected_filter_animal_category_boolean" class="concert_text">{{selected_filter_animal_category.name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="selected_filter_animal_category_boolean" class="clear_search" (click)="clear_animal_category_filter()" ><ion-icon name="backspace-outline"></ion-icon></ion-button>
+      <ion-button id="new_rescue_btn" (click)="generate_new_rescue_request()" ><ion-icon name="paw" ></ion-icon>  Rescue</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="false" color="secondary">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" >
+    <ion-refresher-content
+      refreshingSpinner="circular">
+    </ion-refresher-content>
+</ion-refresher>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">StrayDopt</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- <ion-progress-bar type="indeterminate" *ngIf="commonservice.bar_loader"></ion-progress-bar> -->
+
+  <div *ngIf="!rescue_segment || user_type ==='1'" style="    min-height: 8%;">
+    <ion-searchbar showCancelButton="focus" placeholder="Search for name or username" (ionChange)="search_rescuers_from_server($event.target.value)"></ion-searchbar>
+  </div>
+
+  <ion-slides pager="false" [options]="slideOpts" id="rescuer_slider">
+    <ion-slide *ngFor="let animal_category of animal_master_category; let i = index; let lst = last;" (click)="filter_animal_category_type(animal_category.id, animal_category)">
+      <div>
+        <div class="part-icon">
+          <p><span class="dot" [style.background-color]="animal_category.color_code"></span><span class="text_badge">{{animal_category.name}}</span></p>
+        </div>
+        
+      </div>
+    </ion-slide>
+    
+  </ion-slides>
+
+
+
+  <div id="container_above_rescuer_list" >
+    <ion-row>
+      <ion-col size=6>
+        <p class="pacific_text">Search For Nearest rescuers in your location.</p>
+        <p id="selected_animal_category_title">
+          {{selected_filter_animal_category.name}}
+        </p>
+      </ion-col>
+      <ion-col size=6>
+        <!-- <img src='/assets/home/Playful_cat.svg'> -->
+        <!-- <img src='../../../../assets/profile/rescuer_user2.svg'> -->
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <div id="container_for_rescuer_list">
+    <ion-list>
+
+      <ion-list-header *ngIf="user_type === '1'">
+        <ion-label><h2>Rescuers Near You.</h2></ion-label>
+      </ion-list-header>
+
+      <ion-list-header *ngIf="user_type === '2'">
+
+        <ion-segment style="width: 95%;" (ionChange)="segmentChanged($event.target.value)" value="{{rescue_segment}}">
+          <ion-segment-button value="rescues">
+            <ion-label>Rescues</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="rescuers">
+            <ion-label>Rescuers</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+</ion-list-header>
+
+
+
+
+
+      <!-- <ion-row  *ngIf="rescue_segment === 'rescues' && user_type === '2'"> -->
+      <ion-row  >
+
+        <!-- <ion-col size="6" *ngFor="let rescue_request of rescue_request_list">
+          <ion-card class="animal_img_container"  (click)="open_rescue_details(rescue_request.id)">
+              <img class="animal_img" src="{{rescue_request.url}}" (error)="commonservice.image_load_error($event, 'animal')">
+              <ion-card-header>
+                <ion-card-title>{{rescue_request.category_name}}</ion-card-title>
+                <ion-card-subtitle id="urgent_text" >
+                  <span *ngIf="rescue_request.urgent === 'true'">
+                    Urgent
+                  </span>
+                  &nbsp;
+                  </ion-card-subtitle>
+              </ion-card-header>
+              <ion-row style="margin-bottom: 5px;">
+                <ion-col size="12" style="text-align: center;">
+                  <ion-button id="custom-button-accept" *ngIf="rescue_request.user_id !== user_id && rescue_request.accepted_by_rescuer_id === '0'" (click)="accept_rescue_request(rescue_request.id)">Accept</ion-button>
+                  <ion-button id="custom-button-accept" *ngIf="rescue_request.user_id === user_id || rescue_request.accepted_by_rescuer_id !== '0'" (click)="open_rescue_details(rescue_request.id)">Details</ion-button>
+                </ion-col>
+                
+              </ion-row>
+          </ion-card>
+        </ion-col> -->
+
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <!-- <ion-card class="animal_img_container"  >
+              <img class="animal_img" src=".././../../../assets/profile/pet_adoption.svg" >
+              <ion-card-header>
+                <ion-card-title>Name</ion-card-title>
+              </ion-card-header>
+          </ion-card> -->
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <!-- <span *ngIf="rescuer.rescued_animal_type_category[0]">
+                <span  *ngFor="let animal_category of rescuer.rescued_animal_type_category" >
+                  <span *ngIf="animal_category">
+                    <span *ngIf="animal_category.color_code" class="dot" [style.background-color]="animal_category.color_code"></span>
+                  </span>
+                </span> 
+              </span> -->
+              <br>
+              <!-- Distance: {{rescuer.distance}}Km -->
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+            <!-- <ion-icon name="chevron-back-circle"></ion-icon> -->
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" >
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src=".././../../../assets/profile/pet_adoption.svg">
+            </ion-avatar>
+            <ion-label > displayName
+              <br>
+              Distance: 77Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+        </ion-col>
+
+      <div *ngIf="noRescueFound">
+        <ion-img class="no_data_found_img" src="../../../assets/profile/searching.svg"></ion-img>
+        <ion-item>
+          <ion-label>
+            <p class="no_data_found">
+              No such rescue found :(
+            </p>
+          </ion-label>
+        </ion-item>
+      </div>
+      </ion-row>
+
+
+      <div *ngIf="rescue_segment === 'rescuers' || user_type === '1'">
+        <ion-item-sliding  *ngFor="let rescuer of rescuer_list; let i = index; let lst = last;">
+          <ion-item  (click)="rescuers_details(rescuer.id)">
+            <ion-avatar slot="start">
+              <img src="{{rescuer.photo}}" (error)="image_load_error($event)">
+            </ion-avatar>
+            <ion-label >{{rescuer.displayName}}
+              <span *ngIf="rescuer.rescued_animal_type_category[0]">
+                <span  *ngFor="let animal_category of rescuer.rescued_animal_type_category" >
+                  <span *ngIf="animal_category">
+                    <span *ngIf="animal_category.color_code" class="dot" [style.background-color]="animal_category.color_code"></span>
+                  </span>
+                </span> 
+              </span>
+              <br>
+              Distance: {{rescuer.distance}}Km
+            </ion-label>
+            <div class="ion-activatable ripple-parent">
+              <ion-ripple-effect></ion-ripple-effect>
+            </div>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option (click)="rescuers_details(rescuer.id)">More</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        
+  
+        <ion-item-sliding *ngIf="noRescueFound">
+          <ion-img class="no_data_found_img" src="../../../assets/profile/searching.svg"></ion-img>
+          <ion-item>
+            <ion-label>
+              <p class="no_data_found">
+                No such rescuer found :(
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-item-sliding>
+      </div>
+      
+    </ion-list>
+  </div>
+
+  
+  
+</ion-content>

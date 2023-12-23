@@ -1,0 +1,232 @@
+<ion-content color="primary">
+  <!-- <ion-progress-bar type="indeterminate" *ngIf="commonservice.bar_loader"></ion-progress-bar> -->
+  <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  <ion-grid id='form_content'>
+
+    <div>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <!-- <ion-back-button defaultHref="tabs/myaccount" (click)="uploadImg.destroy_image_urls()"><ion-icon name="arrow-back-circle-outline"></ion-icon></ion-back-button> -->
+          <ion-back-button>
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </ion-back-button>
+        </ion-buttons>
+        <ion-title color="dark" class="form_title">Adoption request</ion-title>
+      </ion-toolbar>
+    </div>
+
+    <ion-list>
+
+
+      <!-- <form  [formGroup]="form"  (ngSubmit)="submitHandler()"> -->
+      <form>
+
+        <!-- <ion-card class="card-border"> -->
+        <ion-card-subtitle color="dark" class=' upload_img_label'>Upload Images of the animal for Adoption
+        </ion-card-subtitle>
+        <ion-row>
+          <ion-col size="12" id="img_col_main">
+            <!-- <ion-card (click)="select_upload_process(1)" class="img_card_main" > -->
+            <ion-card class="img_card_main">
+              <ion-card-content>
+                <!-- <ion-thumbnail *ngIf="uploadImg.adoption_photo_preview1">
+                    <ion-img src="{{uploadImg.adoption_photo_previewurl1}}"></ion-img>
+                  </ion-thumbnail>
+
+                  <ion-thumbnail *ngIf="!uploadImg.adoption_photo_preview1">
+                    <ion-img src="../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail> -->
+
+                <ion-thumbnail>
+                  <ion-img  src="../../../../assets/profile/pet_adoption.svg"></ion-img>
+                </ion-thumbnail>
+
+                <!-- <ion-thumbnail>
+                    <ion-img src="../../../../assets/profile/pet_adoption.svg"></ion-img>
+                  </ion-thumbnail> -->
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row *ngIf="uploadImg.adoption_photo_preview1">
+            <ion-col size="6" id="img_col_secondary_1">
+              <ion-card (click)="select_upload_process(2)" class="img_card_secondary" >
+                <ion-card-content>
+                  <ion-thumbnail *ngIf="uploadImg.adoption_photo_preview2">
+                    <ion-img src="{{uploadImg.adoption_photo_previewurl2}}"></ion-img>
+                  </ion-thumbnail>
+                  <ion-thumbnail *ngIf="!uploadImg.adoption_photo_preview2">
+                    <ion-img src="../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="6" id="img_col_secondary_2">
+              <ion-card (click)="select_upload_process(3)" class="img_card_secondary" >
+                <ion-card-content>
+                  <ion-thumbnail *ngIf="uploadImg.adoption_photo_preview3">
+                    <ion-img src="{{uploadImg.adoption_photo_previewurl3}}"></ion-img>
+                  </ion-thumbnail>
+                  <ion-thumbnail *ngIf="!uploadImg.adoption_photo_preview3">
+                    <ion-img src="../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            
+          </ion-row> -->
+
+        <ion-row>
+          <ion-col size="6" id="img_col_secondary_1">
+            <ion-card class="img_card_secondary">
+              <ion-card-content>
+                <ion-thumbnail>
+                  <ion-img src="../../../../assets/profile/rescuer.svg"></ion-img>
+                </ion-thumbnail>
+                <!-- <ion-thumbnail *ngIf="!uploadImg.adoption_photo_preview2">
+                    <ion-img src="../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail> -->
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6" id="img_col_secondary_2">
+            <ion-card class="img_card_secondary">
+              <ion-card-content>
+                <!-- <ion-thumbnail *ngIf="uploadImg.adoption_photo_preview3">
+                    <ion-img src="{{uploadImg.adoption_photo_previewurl3}}"></ion-img>
+                  </ion-thumbnail>
+                  <ion-thumbnail *ngIf="!uploadImg.adoption_photo_preview3">
+                    <ion-img src="../../assets/icon/add_img.svg"></ion-img>
+                  </ion-thumbnail> -->
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+        <!-- </ion-card> -->
+
+
+        <ion-row>
+          <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6">
+
+            <ion-item>
+              <ion-label for="exampleInputEmail2">Name</ion-label>
+              <!-- <ion-input type="text" id="exampleInputEmail2" placeholder="Ghost" formControlName="name" value="{{animal_adoption_details.name}}" ></ion-input> -->
+              <ion-input type="text" id="exampleInputEmail2" placeholder="Ghost"></ion-input>
+            </ion-item>
+
+            <small id="emailHelp2" class="form-text text-muted">Enter Pet's name.</small>
+          </ion-col>
+
+          <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="3" sizeXl="3">
+            <ion-item>
+              <ion-label>Category</ion-label>
+              <!-- <ion-select placeholder="Select One" formControlName="category" value="{{animal_adoption_details.category}}" >
+            <ion-select-option *ngFor="let animal_category of animal_master_category; let i = index; let lst = last;" value="{{animal_category.id}}">{{animal_category.name}}</ion-select-option>
+          </ion-select> -->
+              <ion-select placeholder="Select One">
+                <ion-select-option>test</ion-select-option>
+                <ion-select-option>test</ion-select-option>
+                <ion-select-option>test</ion-select-option>
+                <ion-select-option>test</ion-select-option>
+                <ion-select-option>test</ion-select-option>
+                <ion-select-option>test</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="3" sizeXl="3">
+            <ion-item>
+              <ion-label for="exampleInputEmail2">Age</ion-label>
+              <!-- <ion-input type="number" id="exampleInputEmail2" placeholder="0.6" formControlName="age" value="{{animal_adoption_details.age}}"></ion-input> -->
+              <ion-input type="number" id="exampleInputEmail2" placeholder="0.6"></ion-input>
+            </ion-item>
+            <small id="emailHelp2" class="form-text text-muted">Enter Pet's Age in years.</small>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="4" sizeXl="4">
+            <ion-item>
+              <ion-label for="exampleInputEmail2">Breed</ion-label>
+              <!-- <ion-input type="text" id="exampleInputEmail2" placeholder="Indie Stray" formControlName="breed" value="{{animal_adoption_details.breed}}"></ion-input> -->
+              <ion-input type="text" id="exampleInputEmail2" placeholder="Indie Stray"></ion-input>
+            </ion-item>
+            <small id="emailHelp2" class="form-text text-muted">Enter Pet's breed.</small>
+          </ion-col>
+
+          <ion-col sizeXs="12" sizeSm="12" sizeMd="12" sizeLg="4" sizeXl="4">
+            <ion-item>
+              <ion-label for="exampleInputEmail2">Color</ion-label>
+              <!-- <ion-input type="text" id="exampleInputEmail2" placeholder="Dark Brown" formControlName="color" value="{{animal_adoption_details.color}}" ></ion-input> -->
+              <ion-input type="text" id="exampleInputEmail2" placeholder="Dark Brown"></ion-input>
+            </ion-item>
+            <small id="emailHelp2" class="form-text text-muted">Enter Pet's Color.</small>
+          </ion-col>
+        </ion-row>
+
+        <ion-item>
+          <ion-label>Description: </ion-label>
+          <!-- <ion-textarea type="text"  id="exampleInputEmail3"  formControlName="description" placeholder="Enter Description of pet"  style="height: 100px;width: auto;" value="{{animal_adoption_details.description}}"></ion-textarea> -->
+          <ion-textarea type="text" id="exampleInputEmail3" placeholder="Enter Description of pet"
+            style="height: 100px;width: auto;"></ion-textarea>
+        </ion-item>
+        <ion-label size="small" id="emailHelp3" color="medium">Enter Every Detail About the Pet.</ion-label>
+
+
+
+
+        <!-- <ion-item *ngIf="adoption_post_id == '0'"> -->
+        <ion-item>
+          <ion-list>
+
+            <ion-label text-wrap for="exampleCheck1">Accept that you agree with all of our
+              <strong (click)="open_link('https://www.straydopt.com/privacypolicy')">
+                Privacy policy
+              </strong>
+              and
+              <strong (click)="open_link('https://www.straydopt.com/termsandcondition')">
+                Terms & Conditions
+              </strong>
+            </ion-label>
+          </ion-list>
+        </ion-item>
+        <!-- <ion-item *ngIf="adoption_post_id != '0'" style="display: none;"> -->
+        <ion-item style="display: none;">
+          <ion-list>
+            <ion-item>
+              <ion-checkbox color="secondary" value="true" checked></ion-checkbox>
+              <ion-label> Accept</ion-label>
+            </ion-item>
+            <ion-label text-wrap for="exampleCheck1">Accept that you agree with all of our
+              <strong (click)="open_link('https://www.straydopt.com/privacypolicy')">
+                Privacy policy
+              </strong>
+              and
+              <strong (click)="open_link('https://www.straydopt.com/termsandcondition')">
+                Terms & Conditions
+              </strong>
+            </ion-label>
+          </ion-list>
+        </ion-item>
+
+
+
+
+
+
+
+        <!-- <ion-button type="submit" expand="block"   [disabled]="form.invalid">Submit</ion-button> -->
+        <ion-button type="submit" expand="block">Submit</ion-button>
+
+
+      </form>
+
+
+    </ion-list>
+
+  </ion-grid>
+
+
+</ion-content>

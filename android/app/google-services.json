@@ -1,0 +1,79 @@
+{
+    "project_info": {
+      "project_number": "483761614478",
+      "firebase_url": "https://straydopt.firebaseio.com",
+      "project_id": "straydopt",
+      "storage_bucket": "straydopt.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:483761614478:android:8dbd4c13e981340fa5a3df",
+          "android_client_info": {
+            "package_name": "com.papapanda.straydopt"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "483761614478-15r372dbhe1s01dhhg4ro8ibnqmqji6v.apps.googleusercontent.com",
+            "client_type": 1,
+            "android_info": {
+              "package_name": "com.papapanda.straydopt",
+              "certificate_hash": "d168a1ef844d617b8585a314d6d6ba614990608f"
+            }
+          },
+          {
+            "client_id": "483761614478-5dglkek0nmhuij93it9v0fofuvongm1g.apps.googleusercontent.com",
+            "client_type": 1,
+            "android_info": {
+              "package_name": "com.papapanda.straydopt",
+              "certificate_hash": "6a38b77a5042dcf3630aa693d76c7e32151ff9d6"
+            }
+          },
+          {
+            "client_id": "483761614478-5j6dgh9fib32erb3qimt5er153l8j0h1.apps.googleusercontent.com",
+            "client_type": 1,
+            "android_info": {
+              "package_name": "com.papapanda.straydopt",
+              "certificate_hash": "37504ced924f7e37c9c1cffe96376ff5d80aa21b"
+            }
+          },
+          {
+            "client_id": "483761614478-loo3pmgn0k3e4j3kdiuefrvbc9s5qkh8.apps.googleusercontent.com",
+            "client_type": 1,
+            "android_info": {
+              "package_name": "com.papapanda.straydopt",
+              "certificate_hash": "1dbee03a792cb267b74053c2e8993d8d857c8a17"
+            }
+          },
+          {
+            "client_id": "483761614478-i8tmepgvoiar1g2h1tcl94b0tjj0cv0n.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDFfFuvDwJpjLSL1ySjmrXgCipHr_qYg2c"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "483761614478-i8tmepgvoiar1g2h1tcl94b0tjj0cv0n.apps.googleusercontent.com",
+                "client_type": 3
+              },
+              {
+                "client_id": "483761614478-lieeeo29kr0j8jfpm43vj69dqqs7fvbn.apps.googleusercontent.com",
+                "client_type": 2,
+                "ios_info": {
+                  "bundle_id": "com.papapanda.straydopt"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

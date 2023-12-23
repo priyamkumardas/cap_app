@@ -1,0 +1,93 @@
+
+
+<ion-content id="body-content" >
+
+  <ion-row id="container1">
+  <ion-col>
+  <div>
+    <h2 class="concert_text" id="header">
+      StrayDopt
+    </h2>
+  </div>
+
+  <div class="">
+    <img src="assets/profile/3.gif">
+  </div>
+  </ion-col>
+
+
+
+          
+      <ion-col>    
+  <span class="ion-text-center who_are_you">
+    <h2>
+      Who Are you?
+    </h2>
+  </span>
+          
+  <ion-row class="">
+    <ion-col size='12'>
+      <ion-card class="card" (click)="user_login(1)">
+        <ion-row class="row_for_image_and_button" id="row_1">
+          <ion-col size='6'>
+            <span class="ion-padding">
+              <img src="assets/profile/normal_user2.svg">
+            </span>
+          </ion-col>
+          <ion-col size='6' class="ion-text-center">
+            <span class="">
+              <ion-button shape="round" fill="outline">User</ion-button>
+            </span>
+          </ion-col>        
+        </ion-row>
+      </ion-card>
+            
+    </ion-col>
+  </ion-row>
+      
+  <ion-row class="">
+    <ion-col size='12'>
+      <ion-card class="card" (click)="user_login(2)">
+        <ion-row class="row_for_image_and_button" id="row_2">
+          <ion-col size='6' class="ion-text-center">
+            <span class="ion-padding">
+              <ion-button shape="round" fill="outline">Rescuers</ion-button>
+            </span>
+          </ion-col>
+          <ion-col size='6'>
+            <span class="">
+              <img src="assets/profile/rescuer_user2.svg">
+            </span>
+          </ion-col>        
+        </ion-row>  
+      </ion-card>
+          
+    </ion-col>
+  </ion-row>
+      </ion-col>
+      </ion-row>
+
+
+  <ion-grid fixed id="container2">
+    <ion-row color="white" shape="round" lines="none" id="contactus_item">
+      <ion-col size="12" (click)="open_link('https://tawk.to/chat/5f5ed1a54704467e89eea212/default')">Contact us</ion-col>
+    </ion-row>
+
+    <ion-row color="white" shape="round" lines="none" id="privacy_and_terms_item">
+      <ion-col style="text-align: right;" (click)="open_link('https://www.straydopt.com/privacypolicy')" size="4">Privacy policy</ion-col>
+      <ion-col style="text-align: center;" size="2"> & </ion-col>
+      <ion-col (click)="open_link('https://www.straydopt.com/termsandcondition')" size="6">Terms and Conditions</ion-col>
+    </ion-row>
+
+    <ion-row color="white" shape="round" lines="none" id="app_version_item">
+      <ion-col size="12" *ngIf="localAppVersionNum">v{{localAppVersionNum}}</ion-col>
+      <!-- <ion-col *ngIf="localAppVersionNum">vx.x.x</ion-col> -->
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+  
+</ion-content>

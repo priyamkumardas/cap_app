@@ -1,0 +1,91 @@
+ion-content{
+    font-family: 'Roboto', sans-serif !important;
+    font-style: normal;
+    font-weight: 200;
+    @font-face {
+    @import url('../assets/font/Roboto-Light.ttf');
+    }
+}
+
+#top_toolbar {
+    --ion-background-color: transparent;
+    --ion-color-base: transparent !important;
+    color: aliceblue;
+}
+
+#animal_details_content{
+    border-top-left-radius:  50px 60px !important;
+    border-top-right-radius: 50px 60px !important;
+
+    #animal_details_column {
+        padding-left: 6vw;
+    }
+}
+
+
+#main_animal_image{
+    max-height:300px;
+    margin-top: -9vh;
+    border-bottom-left-radius:  50px 60px !important;
+    border-bottom-right-radius: 50px 60px !important;
+    margin-top: 2%;
+    
+    ion-slides{
+        ion-slide{
+            img{
+                object-fit: cover;
+                max-height:300px;
+            }
+        }
+    }
+}
+
+#image-slide {
+    width: 390px;
+min-height: 35vh;
+}
+
+
+#fav_icon{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#animal_atrributes{
+    ion-slide{
+        max-width: 20vh;
+        margin-left: 5px;
+    }
+
+}
+
+.animal_attribute_card{
+    width:100%;
+    border-radius: 16px;
+    background: #ededed;
+    box-shadow:  7px 7px 14px #c9c9c9,
+                -7px -7px 14px #ffffff;
+    ion-card-subtitle{
+
+    }
+}
+
+#owner_name{
+    margin-left: 30vw;
+    // margin-top: 7vh;
+    background-color: #f5db76;
+    width: 100%;
+    border-top-left-radius:  50px 60px;
+    border-bottom-left-radius: 50px 60px;
+    
+}
+
+.justify_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
